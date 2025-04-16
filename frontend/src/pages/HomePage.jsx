@@ -11,6 +11,7 @@ import { LOGOUT } from "../graphql/mutations/user.mutation";
 import { GET_TRANSACTION_STATISTICS } from "../graphql/queries/transaction.query";
 import { GET_AUTHENTICATED_USER } from "../graphql/queries/user.query";
 import { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 // const chartData = {
 // 	labels: ["Saving", "Expense", "Investment"],
@@ -31,6 +32,10 @@ import { useEffect, useState } from "react";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const HomePage = () => {
+	const navigate = useNavigate();
+	const handleAvatarClick = () => {
+		navigate("/account"); // Chuyển đến trang quản lý tài khoản
+	};
 	const { data } = useQuery(GET_TRANSACTION_STATISTICS);
 	const { data: authUserData } = useQuery(GET_AUTHENTICATED_USER);
 
@@ -112,6 +117,7 @@ const HomePage = () => {
 						src={authUserData?.authUser.profilePicture}
 						className='w-11 h-11 rounded-full border cursor-pointer'
 						alt='Avatar'
+						onClick={handleAvatarClick}
 					/>
 					{!loading && <MdLogout className='mx-2 w-5 h-5 cursor-pointer' onClick={handleLogout} />}
 					{/* loading spinner */}
