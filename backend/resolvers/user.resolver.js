@@ -67,6 +67,24 @@ const userResolver = {
 				throw new Error(err.message || "Internal server error");
 			}
 		},
+		updateUser: async (_, { userId, input }) => {
+			try {
+			  const updatedUser = await User.findByIdAndUpdate(
+				userId,
+				{ $set: input },
+				{ new: true, runValidators: true }
+			  );
+	  
+			  if (!updatedUser) {
+				throw new Error("User not found");
+			  }
+	  
+			  return updatedUser;
+			} catch (err) {
+			  console.error("Error in updateUser: ", err);
+			  throw new Error(err.message || "Internal server error");
+			}
+		},
 	},
 	Query: {
 		authUser: async (_, __, context) => {

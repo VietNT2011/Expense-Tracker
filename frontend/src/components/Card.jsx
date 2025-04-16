@@ -11,9 +11,9 @@ import { useMutation } from "@apollo/client";
 import { DELETE_TRANSACTION } from "../graphql/mutations/transcation.mutation";
 
 const categoryColorMap = {
-	saving: "from-green-700 to-green-400",
-	expense: "from-pink-800 to-pink-600",
-	investment: "from-blue-700 to-blue-400",
+	saving: "bg-green-500",
+	expense: "bg-pink-500",
+	investment: "bg-blue-500",
 	// Add more categories and corresponding color classes as needed
 };
 
@@ -42,7 +42,7 @@ const Card = ({ transaction, authUser }) => {
 	};
 
 	return (
-		<div className={`rounded-md p-4 bg-gradient-to-br ${cardClass}`}>
+		<div className={`rounded-md p-4 ${cardClass}`}>
 			<div className='flex flex-col gap-3'>
 				<div className='flex flex-row items-center justify-between'>
 					<h2 className='text-lg font-bold text-white'>{category}</h2>
