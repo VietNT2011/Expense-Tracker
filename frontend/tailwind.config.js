@@ -7,6 +7,13 @@ export default {
 	darkMode: "class",
 	theme: {
 		// rest of the code
+		extend: {
+			colors: {
+			  ApolloServerbg: '#ffeadb',
+			  ApolloServertext: '#e36122',
+			  ApolloServerlogo:'#323e43'
+			},
+		  },
 	},
 	plugins: [
 		addVariablesForColors,
