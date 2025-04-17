@@ -40,37 +40,70 @@ const AccountPage = ({ user }) => {
   };
 
   return (
-    <div className="account-page">
-      <h1>Account Details</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Name:</label>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleInputChange}
-          />
+    <div className='h-screen max-w-4xl mx-auto flex flex-col items-center'>
+      <p className='md:text-4xl text-2xl lg:text-4xl font-bold text-center relative z-50 mb-4 mr-4 bg-gradient-to-r from-pink-600 via-indigo-500 to-pink-400 inline-block text-transparent bg-clip-text'>
+        Account Details
+			</p>
+      <form className='w-full max-w-lg flex flex-col gap-5 px-3 ' onSubmit={handleSubmit}>
+        <div className='flex flex-wrap'>
+          <div className='w-full'>
+            <label
+              className='block uppercase tracking-wide text-ApolloServertext text-xs font-bold mb-2'
+              htmlFor='name'
+            >
+              Name
+            </label>
+            <input
+              className='appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
+              id='name'
+              type='text'
+              name='name'
+              value={formData.name}
+              onChange={handleInputChange}
+            />
+          </div>
         </div>
-        <div>
-          <label>Username:</label>
-          <input
-            type="text"
-            name="username"
-            value={formData.username}
-            onChange={handleInputChange}
-          />
+
+        <div className='flex flex-wrap'>
+          <div className='w-full'>
+            <label
+              className='block uppercase tracking-wide text-ApolloServertext text-xs font-bold mb-2'
+              htmlFor='username'
+            >
+              Username
+            </label>
+            <input
+              className='appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
+              id='username'
+              type='text'
+              name='username'
+              value={formData.username}
+              onChange={handleInputChange}
+            />
+          </div>
         </div>
-        <div>
-          <label>Profile Picture URL:</label>
-          <input
-            type="text"
-            name="profilePicture"
-            value={formData.profilePicture}
-            onChange={handleInputChange}
-          />
+
+        <div className='flex flex-wrap'>
+          <div className='w-full'>
+            <label
+              className='block uppercase tracking-wide text-ApolloServertext text-xs font-bold mb-2'
+              htmlFor='profilePicture'
+            >
+              Profile Picture URL
+            </label>
+            <input
+              className='appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
+              id='profilePicture'
+              type='text'
+              name='profilePicture'
+              value={formData.profilePicture}
+              onChange={handleInputChange}
+            />
+          </div>
         </div>
-        <button type="submit">Update Profile</button>
+            
+        <button type="submit" className='text-white font-bold w-full rounded px-4 py-2 bg-gradient-to-br
+          from-pink-500 to-pink-500 hover:from-pink-600 hover:to-pink-600'>Update Profile</button>
       </form>
     </div>
   );
