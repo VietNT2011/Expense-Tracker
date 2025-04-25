@@ -111,7 +111,7 @@ const HomePage = () => {
 			<div className='flex flex-col gap-6 items-center max-w-7xl mx-auto z-20 relative justify-center'>
 				<div className='flex items-center'>
 					<p className='md:text-4xl text-2xl lg:text-4xl font-bold text-center relative z-50 mb-4 mr-4 text-ApolloServertext'>
-						Spend wisely, track wisely
+						Smart spending, brighter future
 					</p>
 					<img
 						src={authUserData?.authUser.profilePicture}
